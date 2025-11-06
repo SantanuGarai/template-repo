@@ -37,7 +37,6 @@ jobs:
           
           # This tells the action to generate the changelog based on commits,
           # but not to create a new tag or version
-          release-count: 0 
           skip-tag: true
           skip-version-file: true
           
