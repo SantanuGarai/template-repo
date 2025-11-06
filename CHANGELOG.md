@@ -1,16 +1,27 @@
 ## 0.1.0 (2025-11-06)
 
+* feat: app.js file added ([993f0ff](https://github.com/SantanuGarai/template-repo/commit/993f0ff))
+* feat: app.js file added ([3fe1a9e](https://github.com/SantanuGarai/template-repo/commit/3fe1a9e))
+* feat: app.js file added 2 ([fe3f865](https://github.com/SantanuGarai/template-repo/commit/fe3f865))
+* feat: new comment added ([11bfc3e](https://github.com/SantanuGarai/template-repo/commit/11bfc3e))
+* feat: new js file added ([9c30d2a](https://github.com/SantanuGarai/template-repo/commit/9c30d2a))
+* Create conventional-changelog.config.js ([08f0f47](https://github.com/SantanuGarai/template-repo/commit/08f0f47))
+* Create release.yml ([5ade9c5](https://github.com/SantanuGarai/template-repo/commit/5ade9c5))
+* Delete CHANGELOG.md ([54df8f1](https://github.com/SantanuGarai/template-repo/commit/54df8f1))
+* Update CHANGELOG.md ([2318110](https://github.com/SantanuGarai/template-repo/commit/2318110))
+* Update release.yml ([10b5b34](https://github.com/SantanuGarai/template-repo/commit/10b5b34))
+* Update release.yml ([9850b7c](https://github.com/SantanuGarai/template-repo/commit/9850b7c))
+* Update release.yml ([894fc9b](https://github.com/SantanuGarai/template-repo/commit/894fc9b))
+* Update release.yml ([526cc75](https://github.com/SantanuGarai/template-repo/commit/526cc75))
+* Update release.yml ([f058a2e](https://github.com/SantanuGarai/template-repo/commit/f058a2e))
+* Update release.yml ([f2f6fd1](https://github.com/SantanuGarai/template-repo/commit/f2f6fd1))
+* docs(changelog): update CHANGELOG.md [skip ci] [skip ci] ([482748b](https://github.com/SantanuGarai/template-repo/commit/482748b))
+* docs(changelog): update CHANGELOG.md [skip ci] [skip ci] ([89187ce](https://github.com/SantanuGarai/template-repo/commit/89187ce))
+* docs(changelog): update CHANGELOG.md [skip ci] [skip ci] ([52f62d9](https://github.com/SantanuGarai/template-repo/commit/52f62d9))
+* docs(changelog): update CHANGELOG.md [skip ci] [skip ci] ([b419e58](https://github.com/SantanuGarai/template-repo/commit/b419e58))
+* docs(changelog): update CHANGELOG.md [skip ci] [skip ci] ([9cbb6e2](https://github.com/SantanuGarai/template-repo/commit/9cbb6e2))
+* fix: issue fix ([1f9794b](https://github.com/SantanuGarai/template-repo/commit/1f9794b))
+* fix: issue fix 255252 ([dc18f8b](https://github.com/SantanuGarai/template-repo/commit/dc18f8b))
 
-### Features
 
-* app.js file added ([993f0ff](https://github.com/SantanuGarai/template-repo/commit/993f0ff443215d81d1935ffdd0586fc6c3f2b544))
-* app.js file added ([3fe1a9e](https://github.com/SantanuGarai/template-repo/commit/3fe1a9eee9e2352f0902585d1f61bd5e98bfd6de))
-* app.js file added 2 ([fe3f865](https://github.com/SantanuGarai/template-repo/commit/fe3f865b84906e3906c6f8561d0027b98d3a3988))
-* new comment added ([11bfc3e](https://github.com/SantanuGarai/template-repo/commit/11bfc3ef2bb3b06c749c254bee0585523bd4a3f0))
-
-
-### Bug Fixes
-
-* issue fix ([1f9794b](https://github.com/SantanuGarai/template-repo/commit/1f9794bb7685602a083d00c3b0f392fbaeb1aefe))
-* issue fix 255252 ([dc18f8b](https://github.com/SantanuGarai/template-repo/commit/dc18f8bc0bde54a3c3b4d582ab1844fd44853cfb))
 
