@@ -6,13 +6,18 @@ permissions:
 
 on:
   pull_request:
-    types: [closed]   # triggers when PR is closed
+    types: [closed]
     branches:
-      - main          # only for PRs targeting main
+      - main
+
+# This is the critical fix for the race condition
+concurrency:
+  group: ${{ github.workflow }}-changelog
+  cancel-in-progress: true
 
 jobs:
   generate-changelog:
-    if: github.event.pull_request.merged == true   # ensure it only runs for merged PRs
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
@@ -29,26 +34,19 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           output-file: ./CHANGELOG.md
           preset: conventionalcommits
-          release-count: 0
-          tag-prefix: ""
-          append-git-tag: false              # ensures new content is added at the top
-          skip-tag: true                     # don't create git tag
+          
+          # This tells the action to generate the changelog based on commits,
+          # but not to create a new tag or version
+          release-count: 0 
+          skip-tag: true
           skip-version-file: true
-          skip-commit: false
+          
+          # This tells the action to commit the file
+          skip-commit: false 
           git-branch: main
-          git-message: "update CHANGELOG.md after PR merge by @${{ github.actor }} [skip ci]"
+          git-message: "docs(changelog): update CHANGELOG.md [skip ci]"
+          git-user-name: "github-actions[bot]"
+          git-user-email: "github-actions[bot]@users.noreply.github.com"
 
-      - name: Commit and Push CHANGELOG
-        run: |
-          if [ -f CHANGELOG.md ]; then
-            echo "Committing updated CHANGELOG.md..."
-            GIT_USER=${{ github.actor }}
-            GIT_EMAIL="${{ github.actor }}@users.noreply.github.com"
-            git config user.name "$GIT_USER"
-            git config user.email "$GIT_EMAIL"
-            git add CHANGELOG.md
-            git commit -m "update CHANGELOG.md after PR merge by @${{ github.actor }} [skip ci]" || echo "No changes to commit"
-            git push origin main
-          else
-            echo "CHANGELOG.md not found — skipping commit"
-          fi
+      # Removed the manual "Commit and Push" step.
+      # The action above now handles it.
