@@ -1,1 +1,54 @@
+name: Update CHANGELOG on PR Merge to Main
 
+permissions:
+  contents: write
+  pull-requests: read
+
+on:
+  pull_request:
+    types: [closed]   # triggers when PR is closed
+    branches:
+      - main          # only for PRs targeting main
+
+jobs:
+  generate-changelog:
+    if: github.event.pull_request.merged == true   # ensure it only runs for merged PRs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Generate or Update CHANGELOG
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          output-file: ./CHANGELOG.md
+          preset: conventionalcommits
+          release-count: 0
+          tag-prefix: ""
+          append-git-tag: false              # ensures new content is added at the top
+          skip-tag: true                     # don't create git tag
+          skip-version-file: true
+          skip-commit: false
+          git-branch: main
+          git-message: "update CHANGELOG.md after PR merge by @${{ github.actor }} [skip ci]"
+
+      - name: Commit and Push CHANGELOG
+        run: |
+          if [ -f CHANGELOG.md ]; then
+            echo "Committing updated CHANGELOG.md..."
+            GIT_USER=${{ github.actor }}
+            GIT_EMAIL="${{ github.actor }}@users.noreply.github.com"
+            git config user.name "$GIT_USER"
+            git config user.email "$GIT_EMAIL"
+            git add CHANGELOG.md
+            git commit -m "update CHANGELOG.md after PR merge by @${{ github.actor }} [skip ci]" || echo "No changes to commit"
+            git push origin main
+          else
+            echo "CHANGELOG.md not found — skipping commit"
+          fi
