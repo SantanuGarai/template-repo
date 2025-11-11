@@ -1,4 +1,4 @@
-## 0.1.0 (2025-11-10)
+## 0.1.0 (2025-11-11)
 
 
 ### Features
@@ -9,6 +9,7 @@
 * app.js file added 2 ([fe3f865](https://github.com/SantanuGarai/template-repo/commit/fe3f865b84906e3906c6f8561d0027b98d3a3988))
 * new comment added ([11bfc3e](https://github.com/SantanuGarai/template-repo/commit/11bfc3ef2bb3b06c749c254bee0585523bd4a3f0))
 * new js file added ([9c30d2a](https://github.com/SantanuGarai/template-repo/commit/9c30d2a64f9b55244e13694214ebf0d9fb1b36ad))
+* remove comments ([44e9f93](https://github.com/SantanuGarai/template-repo/commit/44e9f93f172750ab5d296ca2865ac49e4bfb83ed))
 
 
 ### Bug Fixes
